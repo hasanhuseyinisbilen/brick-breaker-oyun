@@ -1,0 +1,49 @@
+
+
+       .tabla{
+      background-color: black;
+      width: 20%;
+      height: 7%;
+      position: fixed;
+      bottom: 2%;
+      left: 50%;
+     
+      border-radius: 10px;
+    }
+
+    .box {
+      margin-top: 0.5%;
+      margin-left: 0.5%;
+      font-size: 80%;
+      text-align: center;
+      font-weight: bold;
+      position: fixed; /* sayfadakı en yakın nesneye göre konumlanmasını sağlar*/
+      border-radius: 20px;
+      color:#fff;
+    }
+    body {
+  font-size: 2vw;
+}
+
+    
+    .skorKutusu {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 1% 2%;
+      font-size: 18px;
+      border-radius: 10px;
+
+    }
+    .top{
+      width: 1.7%;
+      height: 2.2%;
+      background: aqua; 
+      border-radius: 50%;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+    }
