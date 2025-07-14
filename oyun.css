@@ -1,13 +1,12 @@
 
 
-       .tabla{
+    .tabla{
       background-color: black;
       width: 20%;
       height: 7%;
       position: fixed;
       bottom: 2%;
       left: 50%;
-     
       border-radius: 10px;
     }
 
@@ -20,10 +19,10 @@
       position: fixed; /* sayfadakı en yakın nesneye göre konumlanmasını sağlar*/
       border-radius: 20px;
       color:#fff;
-    }
+   }
     body {
-  font-size: 2vw;
-}
+      font-size: 2vw;
+    }
 
     
     .skorKutusu {
