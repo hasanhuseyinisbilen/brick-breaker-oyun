@@ -4,20 +4,20 @@ const renkler = ["#0ABAB5","#725CAD","#00809D","#A7C1A8","#FF9898","#819A91","#D
 
 function renkSec() { // random renk seçme fonksiyonu
   const renk = Math.floor(Math.random() * renkler.length);// random rengi floor ile  tam sayıya çevirip rengi aldık.
-  return renkler[renk];// return ile fonksiyounu istediğimiz yerde çağırıp çalıştırıcaz.Aşağıda kutuları oluşturup renkleri çağırıcaz.Return etmezsek fonksiyonu çağırmayız ve değeri dışaroya çağıramayız.
+  return renkler[renk];// return ile fonksiyounu istediğimiz yerde çağırıp çalıştırıcaz.Aşağıda kutuları oluşturup renkleri çağırıcaz.Return etmezsek fonksiyonu çağırmayız ve değeri dışarıya çağıramayız.
 }
-const kutuOlusturma = document.getElementById("boxs");// htmldeki box divini seçiyoruz.
+const kutuOlusturma = document.getElementById("boxs");
 const sutunSayisi = 10;// her sütunda 10 kutumuz olsun istiyoruz.
-const kutuYukseklikYuzde = 5; // kutu yükseklikleri %5 yükseklik.
-const aralik = 0.5; // sağdan ve solda verilecek boşluklar marginler.
+const kutuYukseklikYuzde = 5; 
+const aralik = 0.5; // sağdan ve solda verilecek boşluklar.
 const kutuGenislikYuzde = (100 / sutunSayisi) - (aralik * 2); // (100 / 10) - (0.5 * 2) = 8% her kutunun kapladığı alan.
 
 for (let i = 0; i < 40; i++) {
   const yeniDiv = document.createElement("div");// createElement yeni eleman oluşturma.
-  yeniDiv.className = "box";//oluşturacağımız dive className ve id benzersiz kimlik atadık ki daha kolay css ve tek tek üzerlerinde işlem yapabilelim.
+  yeniDiv.className = "box";
   yeniDiv.id = "box" + (i+1);
   yeniDiv.textContent = Math.floor(Math.random() * 100) + 1;// oluşturduğumuz kutunun içine TextCOntent ile random sayı atıyoruz.
-  yeniDiv.style.backgroundColor = renkSec();// daha önce oluşturduğumuz renk sec fonksiypnun değerini çağırıyoruz.
+  yeniDiv.style.backgroundColor = renkSec();
 
   yeniDiv.style.width = kutuGenislikYuzde + "%";// oluşturduğumuz kutulara genişliğimizi ve yüksekliğimizi yüzde olarak atadık.
   yeniDiv.style.height = kutuYukseklikYuzde + "%";
@@ -48,7 +48,7 @@ window.addEventListener("keydown", function(a) {
       if (pozisyon < 0) pozisyon = 0;
       $(".tabla").css("left", pozisyon + "px");
     }
-  } else if (a.keyCode === 39) { // sağ
+  } else if (a.keyCode === 39) { 
     if (pozisyon + $(".tabla").outerWidth() < $(window).width()) {
       pozisyon += pozChange;
       if (pozisyon + $(".tabla").outerWidth() > $(window).width()) {
@@ -98,8 +98,8 @@ function topuHareketEttir() {
 
   
   if (//tabla çarpma kontolü
-    topLeft < tablaLeft + tablaWidth && // topun sol kenarı tablanın sağ kenarını geçti mi
-    topLeft + topWidth > tablaLeft && // topun sağ kenarı tablanın sol kenarını geçti mi yatay çarpışma ihtimali kontrolü
+    topLeft <= tablaLeft + tablaWidth && // topun sol kenarı tablanın sağ kenarını geçti mi
+    topLeft + topWidth >= tablaLeft && // topun sağ kenarı tablanın sol kenarını geçti mi yatay çarpışma ihtimali kontrolü
     topTop + topHeight >= tablaTop &&// topun alt kenarı tablanın üstüne çarptı mı
     topTop <= tablaTop // topun üst kenarı ile tablanın üst kenarı değdi mi
   ) {
