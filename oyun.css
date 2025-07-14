@@ -16,7 +16,7 @@
       font-size: 80%;
       text-align: center;
       font-weight: bold;
-      position: fixed; /* sayfadakı en yakın nesneye göre konumlanmasını sağlar*/
+      position: fixed;
       border-radius: 20px;
       color:#fff;
    }
